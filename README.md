@@ -49,6 +49,7 @@ The library supports 5 different border styles:
 Available color constants:
 - `ColorReset`, `ColorRed`, `ColorGreen`, `ColorYellow`
 - `ColorBlue`, `ColorPurple`, `ColorCyan`, `ColorWhite`
+- `ColorBrightGreen` (80's console green - default border color)
 - `ColorBold` (modifier)
 
 ## Basic Usage

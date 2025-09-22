@@ -34,8 +34,8 @@ func TestNew(t *testing.T) {
 		t.Errorf("Expected StyleSimple, got %v", b.Style)
 	}
 
-	if b.BorderColor != "" {
-		t.Errorf("Expected empty border color, got %s", b.BorderColor)
+	if b.BorderColor != ColorBrightGreen {
+		t.Errorf("Expected ColorBrightGreen border color, got %s", b.BorderColor)
 	}
 
 	if b.TextColor != "" {
@@ -121,7 +121,7 @@ func TestBorderStyles(t *testing.T) {
 }
 
 func TestPrintTopLine(t *testing.T) {
-	b := New().SetWidth(10)
+	b := New().SetWidth(10).SetBorderColor("")
 	output := captureOutput(func() {
 		b.PrintTopLine()
 	})
@@ -133,7 +133,7 @@ func TestPrintTopLine(t *testing.T) {
 }
 
 func TestPrintBottomLine(t *testing.T) {
-	b := New().SetWidth(10)
+	b := New().SetWidth(10).SetBorderColor("")
 	output := captureOutput(func() {
 		b.PrintBottomLine()
 	})
@@ -145,7 +145,7 @@ func TestPrintBottomLine(t *testing.T) {
 }
 
 func TestPrintSeparatorLine(t *testing.T) {
-	b := New().SetWidth(10)
+	b := New().SetWidth(10).SetBorderColor("")
 	output := captureOutput(func() {
 		b.PrintSeparatorLine()
 	})
@@ -157,7 +157,7 @@ func TestPrintSeparatorLine(t *testing.T) {
 }
 
 func TestPrintText(t *testing.T) {
-	b := New().SetWidth(20)
+	b := New().SetWidth(20).SetBorderColor("")
 	output := captureOutput(func() {
 		b.PrintText("Hello")
 	})
@@ -169,7 +169,7 @@ func TestPrintText(t *testing.T) {
 }
 
 func TestPrintCenteredText(t *testing.T) {
-	b := New().SetWidth(20)
+	b := New().SetWidth(20).SetBorderColor("")
 	output := captureOutput(func() {
 		b.PrintCenteredText("Hello")
 	})
@@ -181,7 +181,7 @@ func TestPrintCenteredText(t *testing.T) {
 }
 
 func TestPrintRightText(t *testing.T) {
-	b := New().SetWidth(20)
+	b := New().SetWidth(20).SetBorderColor("")
 	output := captureOutput(func() {
 		b.PrintRightText("Hello")
 	})
@@ -193,7 +193,7 @@ func TestPrintRightText(t *testing.T) {
 }
 
 func TestPrintEmptyLine(t *testing.T) {
-	b := New().SetWidth(10)
+	b := New().SetWidth(10).SetBorderColor("")
 	output := captureOutput(func() {
 		b.PrintEmptyLine()
 	})
@@ -205,7 +205,7 @@ func TestPrintEmptyLine(t *testing.T) {
 }
 
 func TestPrintKeyValue(t *testing.T) {
-	b := New().SetWidth(30)
+	b := New().SetWidth(30).SetBorderColor("")
 	output := captureOutput(func() {
 		b.PrintKeyValue("Version", "1.0.0", 8)
 	})
@@ -446,7 +446,12 @@ func ExampleNew() {
 }
 
 func ExamplePrintSimple() {
-	PrintSimple("My App", "Version 1.0")
+	// Create a banner with no border color to match the old default for the example
+	b := New().SetBorderColor("")
+	b.PrintTopLine()
+	b.PrintCenteredText("My App")
+	b.PrintCenteredText("Version 1.0")
+	b.PrintBottomLine()
 	// Output:
 	// ┌──────────────────────────────────────────────────────────────────────────────┐
 	// │                                    My App                                    │
