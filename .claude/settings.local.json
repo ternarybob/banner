@@ -4,7 +4,10 @@
       "Bash(go run:*)",
       "Read(//c/development/aktis/aktis-collector/internal/common/**)",
       "Read(//c/development/ternarybob/arbor/**)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(gofmt:*)"
     ],
     "deny": [],
     "ask": []
