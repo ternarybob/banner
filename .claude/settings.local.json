@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(go run:*)",
+      "Read(//c/development/aktis/aktis-collector/internal/common/**)",
+      "Read(//c/development/ternarybob/arbor/**)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
