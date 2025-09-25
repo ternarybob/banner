@@ -49,8 +49,9 @@ The library supports 5 different border styles:
 Available color constants:
 - `ColorReset`, `ColorRed`, `ColorGreen`, `ColorYellow`
 - `ColorBlue`, `ColorPurple`, `ColorCyan`, `ColorWhite`
-- `ColorBrightGreen` (80's console green - default border color)
-- `ColorBold` (modifier)
+- `ColorBrightGreen` - Standard 80's console green
+- `ColorPrimaryGreen` - Aktis primary green (#00FF00 - default border color)
+- `ColorBold` - Bold text modifier
 
 ## Basic Usage
 
@@ -208,6 +209,51 @@ func main() {
 ┃ Disk:      120GB                                                   ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
+
+## Release Process
+
+This project uses automatic semantic versioning with GitHub releases. Every commit to the `main` branch automatically:
+
+1. **Increments** the patch version (e.g., v1.0.0 → v1.0.1)
+2. **Creates** a git tag with the new version
+3. **Publishes** a GitHub release with auto-generated release notes
+4. **Updates** the go module version for `go get`
+
+### Version Management
+
+For local development, use the provided scripts:
+
+```bash
+# Check current version
+./scripts/version.sh current
+
+# Increment versions locally (optional)
+./scripts/version.sh patch   # v1.0.0 → v1.0.1
+./scripts/version.sh minor   # v1.0.0 → v1.1.0
+./scripts/version.sh major   # v1.0.0 → v2.0.0
+```
+
+Or on Windows:
+```powershell
+# Check current version
+.\scripts\version.ps1 current
+
+# Increment versions locally (optional)
+.\scripts\version.ps1 patch   # v1.0.0 → v1.0.1
+.\scripts\version.ps1 minor   # v1.0.0 → v1.1.0
+.\scripts\version.ps1 major   # v1.0.0 → v2.0.0
+```
+
+### Manual Releases
+
+You can also create manual releases by pushing tags:
+
+```bash
+git tag v1.5.0
+git push origin v1.5.0
+```
+
+This will create a release without auto-incrementing the version.
 
 ## License
 

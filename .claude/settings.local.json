@@ -9,7 +9,8 @@
       "Bash(git push:*)",
       "Bash(gofmt:*)",
       "Bash(go test:*)",
-      "Read(//c/development/aktis/aktis-documentation/**)"
+      "Read(//c/development/aktis/aktis-documentation/**)",
+      "Bash(chmod:*)"
     ],
     "deny": [],
     "ask": []
