@@ -6,16 +6,17 @@ import (
 )
 
 const (
-	ColorReset       = "\033[0m"
-	ColorRed         = "\033[31m"
-	ColorGreen       = "\033[32m"
-	ColorYellow      = "\033[33m"
-	ColorBlue        = "\033[34m"
-	ColorPurple      = "\033[35m"
-	ColorCyan        = "\033[36m"
-	ColorWhite       = "\033[37m"
-	ColorBold        = "\033[1m"
-	ColorBrightGreen = "\033[92m"
+	ColorReset        = "\033[0m"
+	ColorRed          = "\033[31m"
+	ColorGreen        = "\033[32m"
+	ColorYellow       = "\033[33m"
+	ColorBlue         = "\033[34m"
+	ColorPurple       = "\033[35m"
+	ColorCyan         = "\033[36m"
+	ColorWhite        = "\033[37m"
+	ColorBold         = "\033[1m"
+	ColorBrightGreen  = "\033[92m"
+	ColorPrimaryGreen = "\033[38;2;0;255;0m" // #00FF00 - Aktis primary green
 )
 
 type Style string
@@ -105,7 +106,7 @@ func New() *Banner {
 	return &Banner{
 		Width:       80,
 		Style:       StyleSimple,
-		BorderColor: ColorBrightGreen,
+		BorderColor: ColorPrimaryGreen,
 		TextColor:   "",
 		Bold:        false,
 		borders:     borderStyles[StyleSimple],
