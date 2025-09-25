@@ -34,8 +34,8 @@ func TestNew(t *testing.T) {
 		t.Errorf("Expected StyleSimple, got %v", b.Style)
 	}
 
-	if b.BorderColor != ColorBrightGreen {
-		t.Errorf("Expected ColorBrightGreen border color, got %s", b.BorderColor)
+	if b.BorderColor != ColorPrimaryGreen {
+		t.Errorf("Expected ColorPrimaryGreen border color, got %s", b.BorderColor)
 	}
 
 	if b.TextColor != "" {
